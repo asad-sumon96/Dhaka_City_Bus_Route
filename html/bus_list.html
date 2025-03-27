@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhaka City Bus Route</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/bus_list.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><img src="/images/logo.png" alt="Logo"></div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/html/route.html">Route</a></li>
+          <li><a href="/html/bus_list.html">Bus List</a></li>
+          <li><a href="/test.html">Journey Dua</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <div class="buttons">
+        <button id="show-signup" class="btn">Sign Up</button>
+        <button id="show-login" class="btn">Login</button>
+      </div>
+    </header>
+
+    <main>
+      <h1>BUS LIST</h1>
+      <div class="bus-container">
+          <!-- Bus 1 -->
+          <div class="bus-card">
+              <img src="bus1.jpg" alt="Bikash Paribahan">
+              <div class="bus-info">
+                  <h2>Bikash Paribahan</h2>
+                  <p>Azimpur - Kamarpara</p>
+                  <p>Starting Time: 06:00 AM | Closing Time: 10:00 PM</p>
+                  <p>Seating Service: Semi-Seating Service</p>
+                  <button class="details-btn btn" data-bus="bikash">FOR MORE DETAILS →</button>
+              </div>
+          </div>
+
+          <!-- Bus 2 -->
+          <div class="bus-card">
+              <img src="bus2.jpg" alt="Provati Banasree">
+              <div class="bus-info">
+                  <h2>Provati Banasree</h2>
+                  <p>Azimpur - House Building</p>
+                  <p>Starting Time: 06:00 AM | Closing Time: 10:00 PM</p>
+                  <p>Seating Service: Semi-Seating Service</p>
+                  <button class="details-btn btn" data-bus="provati">FOR MORE DETAILS →</button>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <!-- Pop-up Bus Details -->
+  <div id="bus-popup" class="overlay hidden">
+      <div class="popup-content">
+          <button class="close-btn btn-bg">&times;</button>
+          <img id="bus-image" src="" alt="Bus Image">
+          <h2 id="bus-title"></h2>
+          <p id="bus-route"></p>
+          <p id="bus-time"></p>
+          <p id="bus-service"></p>
+          <p id="bus-stations"></p>
+      </div>
+  </div>
+
+
+      <!-- Popup Overlay -->
+      <div id="overlay" class="overlay hidden">
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-container hidden">
+          <p>
+            Don't Have an Account?
+            <span id="switch-to-signup" class="toggle-link">Sign up</span>
+          </p>
+          <h1 style="font-weight: 700">Login</h1>
+          <form class="input-form">
+            <input type="email" placeholder="Your Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit" class="btn">Login</button>
+            <div class="conditions">
+              <label class="remember">
+                <input type="checkbox" />
+                <span>Remember Me</span>
+              </label>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </form>
+          <button class="btn btn-bg closeOverlay" >Close</button>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="form-container hidden">
+          <h1 style="font-weight: 700">Sign Up</h1>
+  
+          <form class="input-form">
+            <div class="fullName">
+              <input type="text" placeholder="First Name" />
+              <input type="text" placeholder="Last Name" />
+            </div>
+            <input type="email" placeholder="Your Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit" class="btn">Register</button>
+            <div class="conditions">
+              <label class="remember">
+                <input type="checkbox" />
+                <span>Remember Me</span>
+              </label>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </form>
+          <button class="btn btn-bg closeOverlay">Close</button>
+            <p>
+              Already have an account?
+              <span id="switch-to-login" class="toggle-link">Login</span>
+            </p>
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-envelope"></i> info@dhakabusroute.com</p>
+            <p><i class="fas fa-phone"></i> +880 123 456 7890</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dhaka City Bus Route. All rights reserved.</p>
+    </div>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhaka City Bus Route</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/route.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><img src="/images/logo.png" alt="Logo"></div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/html/route.html">Route</a></li>
+          <li><a href="/html/bus_list.html">Bus List</a></li>
+          <li><a href="/test.html">Journey Dua</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <div class="buttons">
+        <button id="show-signup" class="btn">Sign Up</button>
+        <button id="show-login" class="btn">Login</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Popup Overlay -->
+      <div id="overlay" class="overlay hidden">
+        <!-- Login Form -->
+        <div id="login-form" class="form-container hidden">
+          <p>
+            Don't Have an Account?
+            <span id="switch-to-signup" class="toggle-link">Sign up</span>
+          </p>
+          <h1 style="font-weight: 700">Login</h1>
+          <form class="input-form">
+            <input type="email" placeholder="Your Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit" class="btn">Login</button>
+            <div class="conditions">
+              <label class="remember">
+                <input type="checkbox" />
+                <span>Remember Me</span>
+              </label>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </form>
+          <button class="btn btn-bg closeOverlay">Close</button>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="form-container hidden">
+          <h1 style="font-weight: 700">Sign Up</h1>
+
+          <form class="input-form">
+            <div class="fullName">
+              <input type="text" placeholder="First Name" />
+              <input type="text" placeholder="Last Name" />
+            </div>
+            <input type="email" placeholder="Your Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit" class="btn">Register</button>
+            <div class="conditions">
+              <label class="remember">
+                <input type="checkbox" />
+                <span>Remember Me</span>
+              </label>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </form>
+          <button class="btn btn-bg closeOverlay">Close</button>
+          <p>
+            Already have an account?
+            <span id="switch-to-login" class="toggle-link">Login</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Search Container -->
+      <div class="search-container">
+        <h3>Find Your Bus Route</h3>
+        <form class="serachForm">
+            <div class="searchBox">
+                <div class="search-form">
+                    <!-- Starting Point Input -->
+                    <div class="form-group">
+                      <label for="start-station">
+                        <i class="fas fa-map-marker-alt"></i> Starting Point
+                      </label>
+                      <select class="search-input" id="start-station">
+                        <option value="">Select Area (from) - কোথা থেকে যাবেন</option>
+                        <option value="Abdullahpur (আব্দুল্লাহপুর)">Abdullahpur (আব্দুল্লাহপুর)</option>
+                        <option value="Adabor (আদাবর)">Adabor (আদাবর)</option>
+                        <option value="Adamjee School (আদমজী স্কুল)">Adamjee School (আদমজী স্কুল)</option>
+                        <option value="Agargaon (আগারগাঁও)">Agargaon (আগারগাঁও)</option>
+                        <option value="Airport (বিমানবন্দর)">Airport (বিমানবন্দর)</option>
+                        <option value="Amin Bazar (আমিন বাজার)">Amin Bazar (আমিন বাজার)</option>
+                        <option value="Ansar Camp (আনসার ক্যাম্প)">Ansar Camp (আনসার ক্যাম্প)</option>
+                        <option value="Arambagh (আরামবাগ)">Arambagh (আরামবাগ)</option>
+                        <option value="Arambagh Notre Dame College (আরামবাগ নটর ডেম কলেজ)">
+                            Arambagh Notre Dame College (আরামবাগ নটর ডেম কলেজ)
+                        </option>
+                        <option value="Asad Gate (আসাদ গেট)">Asad Gate (আসাদ গেট)</option>
+                        <option value="Ashulia (আশুলিয়া)">Ashulia (আশুলিয়া)</option>
+                        <option value="Asulia Bazar (আশুলিয়া বাজার)">Asulia Bazar (আশুলিয়া বাজার)</option>
+                        <option value="Azampur (আজমপুর)">Azampur (আজমপুর)</option>
+                        <option value="Azimpur (আজিমপুর)">Azimpur (আজিমপুর)</option>
+                        <option value="Babubazar (বাবুবাজার)">Babubazar (বাবুবাজার)</option>
+                        <option value="Badda (বাড্ডা)">Badda (বাড্ডা)</option>
+                        <option value="Badda Link Road (বাড্ডা লিংক রোড)">Badda Link Road (বাড্ডা লিংক রোড)</option>
+                        <option value="Bakshi Bazar (বকশী বাজার)">Bakshi Bazar (বকশী বাজার)</option>
+                        <option value="Balughat (বালুঘাট)">Balughat (বালুঘাট)</option>
+                        <option value="Banani (বনানী)">Banani (বনানী)</option>
+                        <option value="Bangla Motor (বাংলা মোটর)">Bangla Motor (বাংলা মোটর)</option>
+                        <option value="Barmi (বরমী)">Barmi (বরমী)</option>
+                        <option value="Bashabo (বাসাবো)">Bashabo (বাসাবো)</option>
+                        <option value="Bashundhara (বসুন্ধরা)">Bashundhara (বসুন্ধরা)</option>
+                        <option value="Bashundhara (300 Feet Gate) (বসুন্ধরা - ৩০০ ফিট গেট)">
+                            Bashundhara (300 Feet Gate) (বসুন্ধরা - ৩০০ ফিট গেট)
+                        </option>
+                        <option value="Bashtola (বাঁশতলা)">Bashtola (বাঁশতলা)</option>
+                        <option value="Bosila (বসিলা)">Bosila (বসিলা)</option>
+                        <option value="Bata Signal (বাটা সিগন্যাল)">Bata Signal (বাটা সিগন্যাল)</option>
+                        <option value="Beribadh Tin Rastar Moor (বেড়িবাঁধ তিন রাস্তার মোড়)">
+                            Beribadh Tin Rastar Moor (বেড়িবাঁধ তিন রাস্তার মোড়)
+                        </option>
+                        <option value="Baipayl (বাইপাইল)">Baipayl (বাইপাইল)</option>
+                        <option value="Baitul Mukarram (বায়তুল মোকাররম)">Baitul Mukarram (বায়তুল মোকাররম)</option>
+                        <option value="Banasree (বনশ্রী)">Banasree (বনশ্রী)</option>
+                        <option value="Bangla College (বাংলা কলেজ)">Bangla College (বাংলা কলেজ)</option>
+                        <option value="Bangladesh Bank (বাংলাদেশ ব্যাংক)">Bangladesh Bank (বাংলাদেশ ব্যাংক)</option>
+                        <option value="Beribadh (বেড়িবাঁধ)">Beribadh (বেড়িবাঁধ)</option>
+                        <option value="Bijoy Sarani (বিজয় সরাণী)">Bijoy Sarani (বিজয় সরাণী)</option>
+                        <option value="Birulia (বিরুলিয়া)">Birulia (বিরুলিয়া)</option>
+                        <option value="Board Bazar (বোর্ড বাজার)">Board Bazar (বোর্ড বাজার)</option>
+                        <option value="Bot tola (বট তলা)">Bot tola (বট তলা)</option>
+                        <option value="Cantonment (ক্যান্টনমেন্ট)">Cantonment (ক্যান্টনমেন্ট)</option>
+                        <option value="Chalantika Mor (চালানটিকা মোড়)">Chalantika Mor (চালানটিকা মোড়)</option>
+                        <option value="Chairman Bari (চেয়ারম্যান বাড়ী)">Chairman Bari (চেয়ারম্যান বাড়ী)</option>
+                        <option value="Chandra (চন্দ্রা)">Chandra (চন্দ্রা)</option>
+                        <option value="Chankhar Pul (চাঁকহার পুল)">Chankhar Pul (চাঁকহার পুল)</option>
+                        <option value="Chasara (চাষারা)">Chasara (চাষারা)</option>
+                        <option value="Chittagong Road (চট্টগ্রাম রোড)">Chittagong Road (চট্টগ্রাম রোড)</option>
+                        <option value="Chiriyakhana (চিরিয়াখানা)">Chiriyakhana (চিরিয়াখানা)</option>
+                        <option value="City College (সিটি কলেজ)">City College (সিটি কলেজ)</option>
+                        <option value="CMH (সিএমএইচ)">CMH (সিএমএইচ)</option>
+                        <option value="College Gate (কলেজ গেট)">College Gate (কলেজ গেট)</option>
+                        <option value="Dainik Bangla Moor (দৈনিক বাংলা মোড়)">Dainik Bangla Moor (দৈনিক বাংলা মোড়)</option>
+                        <option value="Darussalam (দারুস্সালাম)">Darussalam (দারুস্সালাম)</option>
+                        <option value="Dayagonj (দয়াগঞ্জ)">Dayagonj (দয়াগঞ্জ)</option>
+                        <option value="Demra Staff Quarter (ডেমরা স্টাফ কোয়ার্টার)">
+                            Demra Staff Quarter (ডেমরা স্টাফ কোয়ার্টার)
+                        </option>
+                    </select>
+                      
+                    </div>
+          
+                    <!-- Swap Button -->
+                    <button
+                      id="swap-stations"
+                      title="Swap stations"
+                      aria-label="Swap stations"
+                      class="swap-btn"
+                    >
+                      <i class="fas fa-exchange-alt"></i>
+                    </button>
+          
+                    <!-- Destination Input -->
+                    <div class="form-group">
+                      <label for="end-station">
+                        <i class="fas fa-map-marker"></i> Destination
+                      </label>
+                      <select class="search-input" id="end-station">
+                        <option value="">Select Area (to) - কোথায় যাবেন</option>
+                        <option value="Abdullahpur (আব্দুল্লাহপুর)">Abdullahpur (আব্দুল্লাহপুর)</option>
+                        <option value="Adabor (আদাবর)">Adabor (আদাবর)</option>
+                        <option value="Adamjee School (আদমজী স্কুল)">Adamjee School (আদমজী স্কুল)</option>
+                        <option value="Agargaon (আগারগাঁও)">Agargaon (আগারগাঁও)</option>
+                        <option value="Airport (বিমানবন্দর)">Airport (বিমানবন্দর)</option>
+                        <option value="Amin Bazar (আমিন বাজার)">Amin Bazar (আমিন বাজার)</option>
+                        <option value="Ansar Camp (আনসার ক্যাম্প)">Ansar Camp (আনসার ক্যাম্প)</option>
+                        <option value="Arambagh (আরামবাগ)">Arambagh (আরামবাগ)</option>
+                        <option value="Arambagh Notre Dame College (আরামবাগ নটর ডেম কলেজ)">
+                            Arambagh Notre Dame College (আরামবাগ নটর ডেম কলেজ)
+                        </option>
+                        <option value="Asad Gate (আসাদ গেট)">Asad Gate (আসাদ গেট)</option>
+                        <option value="Ashulia (আশুলিয়া)">Ashulia (আশুলিয়া)</option>
+                        <option value="Asulia Bazar (আশুলিয়া বাজার)">Asulia Bazar (আশুলিয়া বাজার)</option>
+                        <option value="Azampur (আজমপুর)">Azampur (আজমপুর)</option>
+                        <option value="Azimpur (আজিমপুর)">Azimpur (আজিমপুর)</option>
+                        <option value="Babubazar (বাবুবাজার)">Babubazar (বাবুবাজার)</option>
+                        <option value="Badda (বাড্ডা)">Badda (বাড্ডা)</option>
+                        <option value="Badda Link Road (বাড্ডা লিংক রোড)">Badda Link Road (বাড্ডা লিংক রোড)</option>
+                        <option value="Bakshi Bazar (বকশী বাজার)">Bakshi Bazar (বকশী বাজার)</option>
+                        <option value="Balughat (বালুঘাট)">Balughat (বালুঘাট)</option>
+                        <option value="Banani (বনানী)">Banani (বনানী)</option>
+                        <option value="Bangla Motor (বাংলা মোটর)">Bangla Motor (বাংলা মোটর)</option>
+                        <option value="Barmi (বরমী)">Barmi (বরমী)</option>
+                        <option value="Bashabo (বাসাবো)">Bashabo (বাসাবো)</option>
+                        <option value="Bashundhara (বসুন্ধরা)">Bashundhara (বসুন্ধরা)</option>
+                        <option value="Bashundhara (300 Feet Gate) (বসুন্ধরা - ৩০০ ফিট গেট)">
+                            Bashundhara (300 Feet Gate) (বসুন্ধরা - ৩০০ ফিট গেট)
+                        </option>
+                        <option value="Bashtola (বাঁশতলা)">Bashtola (বাঁশতলা)</option>
+                        <option value="Bosila (বসিলা)">Bosila (বসিলা)</option>
+                        <option value="Bata Signal (বাটা সিগন্যাল)">Bata Signal (বাটা সিগন্যাল)</option>
+                        <option value="Beribadh Tin Rastar Moor (বেড়িবাঁধ তিন রাস্তার মোড়)">
+                            Beribadh Tin Rastar Moor (বেড়িবাঁধ তিন রাস্তার মোড়)
+                        </option>
+                        <option value="Baipayl (বাইপাইল)">Baipayl (বাইপাইল)</option>
+                        <option value="Baitul Mukarram (বায়তুল মোকাররম)">Baitul Mukarram (বায়তুল মোকাররম)</option>
+                        <option value="Banasree (বনশ্রী)">Banasree (বনশ্রী)</option>
+                        <option value="Bangla College (বাংলা কলেজ)">Bangla College (বাংলা কলেজ)</option>
+                        <option value="Bangladesh Bank (বাংলাদেশ ব্যাংক)">Bangladesh Bank (বাংলাদেশ ব্যাংক)</option>
+                        <option value="Beribadh (বেড়িবাঁধ)">Beribadh (বেড়িবাঁধ)</option>
+                        <option value="Bijoy Sarani (বিজয় সরাণী)">Bijoy Sarani (বিজয় সরাণী)</option>
+                        <option value="Birulia (বিরুলিয়া)">Birulia (বিরুলিয়া)</option>
+                        <option value="Board Bazar (বোর্ড বাজার)">Board Bazar (বোর্ড বাজার)</option>
+                        <option value="Bot tola (বট তলা)">Bot tola (বট তলা)</option>
+                        <option value="Cantonment (ক্যান্টনমেন্ট)">Cantonment (ক্যান্টনমেন্ট)</option>
+                        <option value="Chalantika Mor (চালানটিকা মোড়)">Chalantika Mor (চালানটিকা মোড়)</option>
+                        <option value="Chairman Bari (চেয়ারম্যান বাড়ী)">Chairman Bari (চেয়ারম্যান বাড়ী)</option>
+                        <option value="Chandra (চন্দ্রা)">Chandra (চন্দ্রা)</option>
+                        <option value="Chankhar Pul (চাঁকহার পুল)">Chankhar Pul (চাঁকহার পুল)</option>
+                        <option value="Chasara (চাষারা)">Chasara (চাষারা)</option>
+                        <option value="Chittagong Road (চট্টগ্রাম রোড)">Chittagong Road (চট্টগ্রাম রোড)</option>
+                        <option value="Chiriyakhana (চিরিয়াখানা)">Chiriyakhana (চিরিয়াখানা)</option>
+                        <option value="City College (সিটি কলেজ)">City College (সিটি কলেজ)</option>
+                        <option value="CMH (সিএমএইচ)">CMH (সিএমএইচ)</option>
+                        <option value="College Gate (কলেজ গেট)">College Gate (কলেজ গেট)</option>
+                        <option value="Dainik Bangla Moor (দৈনিক বাংলা মোড়)">Dainik Bangla Moor (দৈনিক বাংলা মোড়)</option>
+                        <option value="Darussalam (দারুস্সালাম)">Darussalam (দারুস্সালাম)</option>
+                        <option value="Dayagonj (দয়াগঞ্জ)">Dayagonj (দয়াগঞ্জ)</option>
+                        <option value="Demra Staff Quarter (ডেমরা স্টাফ কোয়ার্টার)">
+                            Demra Staff Quarter (ডেমরা স্টাফ কোয়ার্টার)
+                        </option>
+                    </select>
+                    </div>
+            </div>
+             <!-- Search Button -->
+              <button type="submit" id="find-route" class="search-btn">
+                Find Routes <i class="fas fa-search"></i>
+          </button>
+        </form>
+        </div>
+      </div>
+      
+      <!-- Features Section -->
+      <section class="features-section">
+        <a href="/html/bus_list.html" class="feature-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-bus feature-icon"></i>
+          </div>
+          <h3>Bus Information</h3>
+          <p>
+            Get detailed information about buses including routes, schedules, and fares.
+          </p>
+        </a href="#">
+      
+        <a href="#" class="feature-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-map-marked-alt feature-icon"></i>
+          </div>
+          <h3>Route Maps</h3>
+          <p>
+            View interactive maps showing the complete routes of all buses in Dhaka city.
+          </p>
+        </a href="#">
+      
+        <a href="#" class="feature-card">
+          <div class="icon-wrapper">
+            <i class="fas fa-clock feature-icon"></i>
+          </div>
+          <h3>Live Updates</h3>
+          <p>
+            Receive real-time updates about bus arrivals and traffic conditions.
+          </p>
+        </a href="#">
+      </section>
+      
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <!-- Contact Section -->
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-envelope"></i> info@dhakabusroute.com</p>
+          <p><i class="fas fa-phone"></i> +880 123 456 7890</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dhaka City Bus Route. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/Javascript/route.js"></script>
+  </body>
+</html>
