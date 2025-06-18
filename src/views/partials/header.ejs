@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %> | Dhaka Bus Route</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body {
+        font-family: "Metrophobic", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="m-0 p-0 text-center bg-[#fdfbf3]">
+    <header class="bg-white">
+      <nav
+        class="flex justify-between items-center w-full mx-auto shadow-lg pl-5 pr-5"
+      >
+        <div>
+          <a href="/">
+            <img
+              class="w-[10rem] cursor-pointer"
+              src="/images/logo.png"
+              alt="Logo"
+              onerror="this.onerror=null; this.src='https://placehold.co/160x50/ffffff/c7c7c7?text=Logo';"
+            />
+          </a>
+        </div>
+        <div
+          class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[40vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
+        >
+          <ul
+            class="flex flex-row md:flex-row md:items-center md:gap-[4vw] gap-6"
+          >
+            <li>
+              <a
+                href="/"
+                class="text-black text-[20px] no-underline nav-link relative"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/route"
+                class="text-black text-[20px] no-underline nav-link relative"
+                >Route</a
+              >
+            </li>
+            <li>
+              <a
+                href="/bus-list"
+                class="text-black text-[20px] no-underline nav-link relative"
+                >Bus List</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            id="show-login"
+            class="btn px-[15px] py-[8px] bg-red-600 hover:bg-red-500 text-white border-none rounded-[25px] cursor-pointer m-[5px] w-[100px]"
+          >
+            Login
+          </button>
+          <div
+            onclick="onToggleMenu(this)"
+            name="menu"
+            class="text-3xl cursor-pointer md:hidden"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto p-6"></main>
+  </body>
+</html>

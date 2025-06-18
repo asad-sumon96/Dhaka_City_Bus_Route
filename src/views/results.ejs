@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+
+<div
+  id="results-section"
+  class="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg"
+>
+  <h2 class="text-2xl font-bold mb-4 text-gray-800 text-left">
+    Results for: <span class="text-red-600"><%= fromName %></span> &rarr;
+    <span class="text-red-600"><%= toName %></span>
+  </h2>
+
+  <% if (buses.length === 0) { %>
+  <div
+    class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg"
+  >
+    <p>
+      No direct bus routes found for the selected journey. Please try a
+      different route.
+    </p>
+  </div>
+  <div class="text-center mt-6">
+    <a href="/" class="text-red-600 hover:underline">&larr; Back to Search</a>
+  </div>
+  <% } else { %>
+  <div
+    class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-4 rounded-lg mb-6 text-left"
+  >
+    <p class="font-semibold">Please Note:</p>
+    <p class="text-sm">
+      The detailed stop list shows the bus's primary route. Your journey may be
+      in the reverse direction.
+    </p>
+  </div>
+
+  <div class="space-y-4">
+    <% buses.forEach(bus => { %>
+    <div
+      class="details-btn bg-gray-50 hover:bg-gray-100 p-4 rounded-lg shadow-md flex justify-between items-center cursor-pointer transition-all duration-300"
+      data-bus-id="<%= bus.bus_id %>"
+    >
+      <div class="flex items-center">
+        <img
+          src="<%= bus.bus_image_url || 'https://placehold.co/64x64/f8f8f8/c7c7c7?text=Bus' %>"
+          alt="<%= bus.bus_name %>"
+          class="w-16 h-16 rounded-md mr-4 object-cover"
+        />
+        <div class="text-left">
+          <h3 class="text-xl font-semibold text-gray-800">
+            <%= bus.bus_name %>
+          </h3>
+          <p class="text-sm text-gray-500">
+            This bus travels between your selected stops.
+          </p>
+        </div>
+      </div>
+      <span class="text-red-500 font-bold hidden md:block"
+        >View Details &rarr;</span
+      >
+    </div>
+    <% }); %>
+  </div>
+  <div class="text-center mt-8">
+    <a
+      href="/"
+      class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition"
+      >&larr; New Search</a
+    >
+  </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

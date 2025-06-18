@@ -1,0 +1,88 @@
+</main>
+    <footer class="bg-gray-800 text-white pt-10 pb-5 py-10 px-5 text-center">
+      <div class="footer-content flex flex-wrap justify-around max-w-6xl mx-auto gap-2">
+        <div class="footer-section flex-1 min-w-[250px] mb-5 text-left">
+          <h4 class="text-lg mb-5 border-b-2 border-red-600 inline-block pb-1">
+            Contact Us
+          </h4>
+          <p class="text-gray-400 my-2 list-none p-0">
+            <i class="fas fa-envelope"></i> info@dhakabusroute.com
+          </p>
+          <p class="text-gray-400 my-2 list-none p-0">
+            <i class="fas fa-phone"></i> +880 123 456 7890
+          </p>
+        </div>
+
+        <div class="footer-section flex-1 min-w-[250px] mb-5 text-left">
+          <h4 class="text-lg mb-5 border-b-2 border-red-600 inline-block pb-1">
+            Follow Us
+          </h4>
+          <div class="social-icons flex gap-2">
+            <a href="#" class="w-10 h-10 bg-gray-700 text-white rounded-full flex items-center justify-center transition-all duration-300 no-underline hover:bg-red-600 hover:-translate-y-1.25">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-700 text-white rounded-full flex items-center justify-center transition-all duration-300 no-underline hover:bg-red-600 hover:-translate-y-1.25">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-700 text-white rounded-full flex items-center justify-center transition-all duration-300 no-underline hover:bg-red-600 hover:-translate-y-1.25">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section flex-1 min-w-[250px] mb-5 text-left">
+          <h4 class="text-lg mb-5 border-b-2 border-red-600 inline-block pb-1">
+            Quick Links
+          </h4>
+          <ul>
+            <li class="text-gray-400 my-2 list-none p-0">
+              <a href="#" class="text-gray-400 no-underline hover:text-red-600">FAQs</a>
+            </li>
+            <li class="text-gray-400 my-2 list-none p-0">
+              <a href="#" class="text-gray-400 no-underline hover:text-red-600">Privacy Policy</a>
+            </li>
+            <li class="text-gray-400 my-2 list-none p-0">
+              <a href="#" class="text-gray-400 no-underline hover:text-red-600">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center pt-5 mt-5 border-t border-gray-700">
+        <p class="m-0 text-gray-500 text-sm">
+          &copy; 2025 Dhaka City Bus Route. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    
+    <!-- Modals -->
+    <div id="details-modal" class="modal fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-2xl transform scale-95">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h2 id="modal-bus-name" class="text-2xl font-bold">Bus Details</h2>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-gray-800 text-3xl leading-none">&times;</button>
+            </div>
+            <div id="modal-body" class="p-6"></div>
+        </div>
+    </div>
+    
+    <div id="login-modal" class="modal fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-md transform scale-95">
+             <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-2xl font-bold">Login</h2>
+                <button id="close-login-modal-btn" class="text-gray-500 hover:text-gray-800 text-3xl leading-none">&times;</button>
+            </div>
+            <div class="p-6">
+                <p class="text-center text-gray-600 mb-6">Authentication is not yet functional.</p>
+                 <div class="space-y-4">
+                    <input type="text" placeholder="Username" class="w-full p-3 border rounded-lg">
+                    <input type="password" placeholder="Password" class="w-full p-3 border rounded-lg">
+                    <button class="w-full bg-red-600 text-white p-3 rounded-lg hover:bg-red-500">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
